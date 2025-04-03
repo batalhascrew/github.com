@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalhas Crew</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="banner.png" alt="Batalhas Crew Championship" class="banner">
+    </header>
+    
+    <nav class="menu">
+        <button>X1</button>
+        <button>X5</button>
+        <button>Ranked</button>
+        <button>Resultados</button>
+        <button>WL</button>
+    </nav>
+
+    <section class="desafio">
+        <h1>DESAFIO</h1>
+        <p>Preencha este campo para nos informar quem você deseja desafiar.</p>
+        <input type="text" placeholder="Digite o nome do jogador...">
+    </section>
+    
+    <section class="ranked">
+        <h2>RANKED X1</h2>
+        <table id="rankedX1">
+            <tr>
+                <th>#</th>
+                <th>Jogador</th>
+                <th>V</th>
+                <th>D</th>
+            </tr>
+        </table>
+        <button onclick="adicionarJogador('rankedX1')">Adicionar</button>
+    </section>
+    
+    <section class="ranked">
+        <h2>RANKED X5</h2>
+        <table id="rankedX5">
+            <tr>
+                <th>#</th>
+                <th>Time</th>
+                <th>V</th>
+                <th>D</th>
+            </tr>
+        </table>
+        <button onclick="adicionarJogador('rankedX5')">Adicionar</button>
+    </section>
+    
+    <script>
+        function adicionarJogador(tabelaId) {
+            let tabela = document.getElementById(tabelaId);
+            let row = tabela.insertRow(-1);
+            let pos = tabela.rows.length - 1;
+            row.innerHTML = `<td>${pos}</td><td><input type='text' placeholder='Nome'></td><td><input type='number' min='0'></td><td><input type='number' min='0'></td>`;
+        }
+    </script>
+</body>
+</html>
